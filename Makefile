@@ -10,4 +10,4 @@ main.exe: main.o
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf main.o
+	rm *.o

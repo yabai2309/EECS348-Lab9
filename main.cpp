@@ -20,16 +20,16 @@ Creation date: 4/8/25
 using namespace std;
 
 template<typename T>
-Matrix<T> theRealSwapRow(Matrix<T>& matrix, size_t row1, size_t row2){
-    return matrix.swap_rows(row1, row2);
+void theRealSwapRow(Matrix<T>& matrix, size_t row1, size_t row2){
+    matrix.swap_rows(row1, row2);
 }
 template<typename T>
-Matrix<T> theRealSwapCol(Matrix<T>& matrix, size_t col1, size_t col2){
-    return matrix.swap_cols(col1, col2);
+void theRealSwapCol(Matrix<T>& matrix, size_t col1, size_t col2){
+    matrix.swap_cols(col1, col2);
 }
 template<typename T>
-Matrix<T> theRealupdateValue(Matrix<T>& matrix, size_t row, size_t col, T value){
-    return matrix.set_value(row, col, value);
+void theRealupdateValue(Matrix<T>& matrix, size_t row, size_t col, T value){
+    matrix.set_value(row, col, value);
 }
 //Helper function to print out the menu for user
 void printMenu(){
@@ -66,6 +66,10 @@ int main() {
         if(typeFlag == 0){//Integer matrices
             Matrix<int> matrix1(size), matrix2(size);
             file >> matrix1 >> matrix2;
+            cout << "First matrix:"  << endl;//Print out the first matrix
+            matrix1.print_matrix();
+            cout << "Second matrix:"  << endl;//Print out the second matrix
+            matrix2.print_matrix();
              //Handle user choices from the command line menu
             int choice = 0;//Create a placeholder for user choice
             printMenu();//Print out the menu to the user
